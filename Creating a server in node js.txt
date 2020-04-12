@@ -1,0 +1,39 @@
+Creating a server in node js
+
+var http =require('http');
+
+server variable has 2 functions: createServer and listen
+on browser-- type 127.0.0.1:3000 as the node js is accessing localhost
+
+//to know what requested for the server-console.log("Request is "+req.url);
+Eg-
+127.0.0.1:3000/hey
+--cmd: Request is: /hey
+
+Read a file using stream:
+var fs=require('fs');
+var reading=fs.createReadStream(__dirname +'/readfilefromstream.txt');//read a file using a stream
+
+npm-node package manager
+
+dependencies remain even if the package is uninstalled
+npm install to add all the files into the project
+
+
+
+NODEMON 00000000000 WOWOWOWOWOW
+automatically restarts the server when a change is made in your file
+
+
+Template Engine (EJS)
+npm install EJS
+app.set('view engine','ejs');
+//used to embedd javascript data into html file
+Data is passed into the view as:
+app.get('/profile/:id',function(req,res){
+    res.render('profile',{person:req.params.id});
+});
+and in views/profile.ejs--------
+ <h1>Yo BRO <%=person%></h1>
+
+ <% include partial/index.ejs %>
